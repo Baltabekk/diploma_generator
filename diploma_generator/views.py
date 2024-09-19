@@ -7,7 +7,7 @@ from docx import Document
 from docx.shared import Pt
 from docx.enum.style import WD_STYLE_TYPE
 
-GENAI_API_KEY = 'your-api-key-here'
+GENAI_API_KEY = 'AIzaSyCtrFiYRihVUm_L58vS-c_8MEyZX7VLLv0'
 genai.configure(api_key=GENAI_API_KEY)
 model = genai.GenerativeModel('gemini-pro')
 
