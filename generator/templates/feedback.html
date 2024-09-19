@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Feedback{% endblock %}
+
+{% block content %}
+    <h1>Leave Feedback</h1>
+    <form method="post" action="{% url 'feedback' %}">
+        {% csrf_token %}
+        <textarea name="content" rows="4" cols="50" required></textarea>
+        <br>
+        <input type="submit" value="Submit Feedback">
+    </form>
+    
+    <h2>Recent Feedback</h2>
+    {% for feedback in feedbacks %}
+        <p>{{ feedback.content }}</p>
+        <hr>
+    {% endfor %}
+{% endblock %}
