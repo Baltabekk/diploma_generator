@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Generate Diploma{% endblock %}
+
+{% block content %}
+    <h1>Generate Your Diploma</h1>
+    <form method="post" action="{% url 'generate' %}">
+        {% csrf_token %}
+        <label for="topic">Topic:</label>
+        <input type="text" id="topic" name="topic" required>
+        <br><br>
+        <label for="size">Size:</label>
+        <select id="size" name="size" required>
+            <option value="40">40 pages</option>
+            <option value="60">60 pages</option>
+            <option value="100">100 pages</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Generate">
+    </form>
+{% endblock %}
